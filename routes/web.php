@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\Dashbord;
 
 Route::get('/', function () {
     return view('welcome');
-});
+}); 
 
 Auth::routes();
 
