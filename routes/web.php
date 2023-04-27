@@ -18,15 +18,23 @@ use App\Http\Controllers\Admin\Dashbord;
 
 Route::get('/', function () {
     return view('welcome');
-}); 
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix("admin")->middleware(["auth","isAdmin"])->group(function(){
-    Route::get("dashbord", [Dashbord::class,'index']);
-    Route::get("category", [CategoryController::class,'index']);
-    Route::get("category/create", [CategoryController::class,'create']);
-    Route::post("category", [CategoryController::class,'store']);
+Route::prefix("admin")->middleware(["auth", "isAdmin"])->group(function () {
+    Route::get("dashbord", [Dashbord::class, 'index']);
+
+    Route::controller(CategoryController::class)->group(function () {
+        Route::get('/category', 'index');
+        Route::get('/category/create', 'create');
+        Route::post('/category', 'store');
+        Route::get('/category/{category}/edit', 'edit');
+        Route::put('/category/{category}', 'update');
+    });
+
+
+    // Route::post("category", [CategoryController::class, 'store']);
 });

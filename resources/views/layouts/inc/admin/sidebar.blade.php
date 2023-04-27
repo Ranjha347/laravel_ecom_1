@@ -10,16 +10,16 @@
                               <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                                         aria-controls="ui-basic">
                                         <i class="mdi mdi-circle-outline menu-icon"></i>
-                                        <span class="menu-title">UI Elements</span>
+                                        <span class="menu-title">Categories</span>
                                         <i class="menu-arrow"></i>
                               </a>
                               <div class="collapse" id="ui-basic">
                                         <ul class="nav flex-column sub-menu">
                                                   <li class="nav-item"> <a class="nav-link"
-                                                                      href="pages/ui-features/buttons.html">Buttons</a>
+                                                                      href="{{'/admin/category'}}">Categories</a>
                                                   </li>
                                                   <li class="nav-item"> <a class="nav-link"
-                                                                      href="pages/ui-features/typography.html">Typography</a>
+                                                                      href="{{'/admin/category/create'}}">Add Category</a>
                                                   </li>
                                         </ul>
                               </div>
