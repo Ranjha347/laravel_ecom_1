@@ -1,0 +1,12 @@
+sudo chown -R $USER:www-data .
+
+Then I give both myself and the webserver permissions:
+
+sudo find . -type f -exec chmod 664 {} \;   
+sudo find . -type d -exec chmod 775 {} \;
+
+Then give the webserver the rights to read and write to storage and cache
+
+
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
